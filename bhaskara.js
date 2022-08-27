@@ -14,38 +14,33 @@ const res = document.querySelector("#resultado");
 const botao = document.querySelector("#calcular");
 const aviso = document.querySelector("#aviso");
 
-const delta = (a, b, c)=>{
-    a = Number.parseFloat(a);
-    b = Number.parseFloat(b);
-    c = Number.parseFloat(c);
-
-    return b * b -4 * a * c;
-}   
-
-const bhaskara = (a, b, c) =>{
+const bhaskara = (a, b, c) => {
+    a = Number.parseInt(a);
+    b = Number.parseInt(b);
+    c = Number.parseInt(c);
     x = []
-    d = delta (a, b, c);
-    if(d < 0){
+    delta = b * b -4 * a * c;
+
+    if(delta < 0){
         return "Delta é negativo";  
     } 
     else{
-        x[0] = (-b + Math.sqrt(d)) / 2 * a;
-        x[1] = (-b - Math.sqrt(d)) / 2 * a;
+        x[0] = ((-b + Math.sqrt(delta)) / (2 * a));
+        x[1] = ((-b - Math.sqrt(delta)) / (2 * a));
         return x;
     }
 }
 
 botao.onclick = () => {
     if (valor_a.value == "" || valor_b.value == "" || valor_c.value == ""){
-        aviso.innerText = "Necessário inserir os valores de a, b, c. Caso não tenha digite 1"
+        aviso.innerText = "Necessário inserir os valores de a, b, c.";
     }
-    else if (valor_a.value != 0){
+    else if (valor_a.value !== '0'){
         res.value= bhaskara(valor_a.value, valor_b.value, valor_c.value);
-        aviso.innerText = ""
+        aviso.innerText = "";
     }
     else{
-        aviso.innerText = "Valor de 'a' deve ser diferente de 0"
-        valor_a = ""
+        aviso.innerText = "Valor de 'a' deve ser diferente de 0";
     }
 }
 

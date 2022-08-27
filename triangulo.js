@@ -9,9 +9,9 @@ Crie um código JS que receba os comprimentos dos lados de um triângulo atravé
 quanto ao tamanho de seus lados. (Neste exemplo deve-se abstrair as condições matemáticas de existência de um triângulo) */
 
 
-const equilatero = "Equilátero: Os três lados são iguais."
-const isosceles =  "Isósceles: Dois lados iguais."
-const escaleno = "Escaleno: Todos os lados são diferentes." 
+const equilatero = "Equilátero: Os três lados são iguais.";
+const isosceles =  "Isósceles: Dois lados iguais.";
+const escaleno = "Escaleno: Todos os lados são diferentes."; 
 
 // Selecionado os elementos da tela.
 const lado1 = document.querySelector("#lado1");
@@ -28,15 +28,15 @@ const triangulo = (valor1, valor2, valor3) => {
     valor3 = Number.parseFloat(valor3);
 
     if (valor1 == valor2 && valor3 == valor1){
-        res.value = "Equilátero"
+        res.value = "Equilátero";
         return  equilatero;
     }
     if(valor1 != valor2 && valor1 != valor3 && valor2 != valor3){
-        res.value = "Escaleno"
+        res.value = "Escaleno";
         return escaleno;
     }
     else {
-        res.value = "Isósceles"
+        res.value = "Isósceles";
         return isosceles;
     }
 }

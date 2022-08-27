@@ -35,7 +35,6 @@ const luidy = (valor) => {
         else{
             lista.push(` ${i}`);
         }
-        
     }
     return lista
 }

@@ -21,15 +21,15 @@ const resultado = (valor) => {
     valor = Number.parseFloat(valor);
     if (valor >= 0 && valor <= 100){
         if (valor % 5 >= 3 && valor >= 38){
-            valor += 5 - valor % 5 
+            valor += 5 - valor % 5; 
         }
         if (valor >= 40){
-            aviso.innerText = "Aprovado"
-            return valor
+            aviso.innerText = "Aprovado";
+            return valor;
         }
         else{
-            aviso.innerText = "Reprovado"
-            return valor
+            aviso.innerText = "Reprovado";
+            return valor;
         }
     }
 }
